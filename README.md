@@ -28,11 +28,12 @@ Intent is a website for friends, family, and coworkers to communicate and stay c
 *   Homepage
 *   Register
 *   Sign in
-*   User page (List of public and private goals, completed and uncompleted goals)
+*   User page (List of public and private goals, Completed and uncompleted goals)
 *   Edit Profile
-*   View goal (tasks, add comments)
 *   Search result
-*   Add (goal, tasks)
+*   Add (Goal, Tasks)
+*   Edit (Goal, Tasks)
+*   View goals (Tasks, Add comments)
 *   About us
 *   Contact us
 *   Page not found
@@ -46,7 +47,7 @@ Intent is a website for friends, family, and coworkers to communicate and stay c
 *   Homepage
 *   Register
 *   Search result
-*   View goal public (Tasks)
+*   View goals public (Tasks ,Comments)
 *   About us
 *   Contact us
 *   Page not found
@@ -54,14 +55,17 @@ Intent is a website for friends, family, and coworkers to communicate and stay c
 ### (User , other user)
 
 *   Sign in
-*   User page (List of public goals, completed and uncompleted goals)
+*   User page (List of public and private goals, Completed and uncompleted goals)
 *   Edit Profile
-*   View goal public (Add comments)
+*   Add (Goal, Tasks, Comments)
+*   Edit (Goal, Tasks)
+*   Delete (Goal, Task, Comments)
+*   View goal private
 
 ### (Admin)
 
 *   Easily add permissions and permissions
-*   View all pages without restrictions
+*   View, add, edit or delete all pages without restrictions
 
 ---
 
