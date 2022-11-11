@@ -28,6 +28,7 @@ Intent is a website for friends, family, and coworkers to communicate and stay c
 *   Homepage
 *   Register
 *   Sign in
+*   Lists public goals randomly
 *   User page (List of public and private goals, Completed and uncompleted goals)
 *   Edit Profile
 *   Search result
