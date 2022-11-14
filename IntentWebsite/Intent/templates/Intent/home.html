@@ -1,0 +1,15 @@
+{% extends 'Intent/base.html' %}
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+<div class="boxed-page">
+<ul>
+    <a href="{% url 'Intent:signin' %}"><li>signin</li></a>
+    <a href="{% url 'Intent:register' %}"><li>register</li></a>
+</ul>
+<div class="contener">
+    <h1>list</h1>
+</div>
+</div>
+{% endblock %}

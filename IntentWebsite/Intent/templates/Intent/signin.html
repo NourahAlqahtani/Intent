@@ -1,0 +1,25 @@
+{% extends 'Intent/base.html' %}
+{% block title %} signin {% endblock %}
+
+
+{% block content %}
+
+
+    <form>
+        <h3>Login Here</h3>
+    
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username">
+    
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+    
+        <button>Log In</button>
+        <div class="social">
+          <div class="fb"><a href="{% url 'Intent:register' %}">Regester</a> </div>
+        </div>
+    </form>
+    
+
+
+{% endblock %}
