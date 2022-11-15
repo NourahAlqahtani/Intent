@@ -1,0 +1,24 @@
+{% extends 'Intent/base.html' %}
+{% block title %} add task {% endblock %}
+
+
+{% block content %}
+
+{{ goal.goaltitle }}
+
+
+
+<form action="{% url 'Intent:add_task' goal.id %}" method="POST">
+    {% csrf_token %}
+<div>
+    <h3>Task add</h3>
+
+<label>Task</label>
+<input type="text" placeholder="Task" name ="task">
+
+<button name="addtask" value="addtask">Creat</button>
+
+</div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<form action="" method="POST">
+    <h3>Goal add</h3>
+
+    <label>Goal Title</label>
+    <input type="text" placeholder="Goal Title" name ="goaltitle">
+
+    <label>Type Goal</label>
+    <select name="is_public">
+        <option value="True">Public</option>
+        <option value="False">Private</option>
+    </select>
+
+    <label>Priority</label>
+    <select name="priority">
+        {% for choice in Goal.priority_choices.choices %}
+        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+        {% endfor %}
+        
+    </select>
+    <label>Your description:</label>
+        <textarea name="description"></textarea>
+
+    <a href="{% url 'Intent:register' %}"><button>Creat</button></a>
+</form>
