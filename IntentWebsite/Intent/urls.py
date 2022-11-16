@@ -10,7 +10,7 @@ urlpatterns = [
     path("home/", views.home, name="home"),
     path("profile/",views.profile,name = "profile"),
     path("goal/",views.add_goal,name = "add_goal"),
-    path("goal/<goal_id>",views.goal,name = "goal"),
+    path("tasks/<goal_id>",views.tasks,name = "tasks"),
     path("task/<goal_id>/",views.add_task,name = "add_task"),
     path("search/",views.search,name = "search"),
 ]

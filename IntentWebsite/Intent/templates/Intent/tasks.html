@@ -6,6 +6,15 @@
 
 {{ goal.goaltitle }}
 
+<h2>Tasks</h2>
+<br>
+
+    {% for task in tasks %}
+        <div class="border rounded p-3 mt-3">
+            <h5>{{ task.task }}</h5>
+            <p>{{ task.is_done }}</p>
+        </div>
+    {% endfor %}
 
 
 <form action="{% url 'Intent:add_task' goal.id %}" method="POST">
@@ -20,5 +29,6 @@
 
 </div>
 </form>
+<a href="{% url 'Intent:profile' %}"><button>Done</button></a>
 
 {% endblock %}

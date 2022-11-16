@@ -6,4 +6,49 @@
 
 
 
+
+<div class="boxed-page">
+  <strong class="text-dark nav-link">Welcome {{ request.user.first_name }}</strong>
+  <a href="{% url 'Intent:add_goal' %}"><button name="addgoal" value="addgoal">Add Goal</button></a>
+<p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#all" role="button" aria-expanded="false" aria-controls="collapseExample">
+      all
+    </a>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#public" role="button" aria-expanded="false" aria-controls="collapseExample">
+        public
+      </a>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#private" role="button" aria-expanded="false" aria-controls="collapseExample">
+        private
+      </a>
+</p>
+
+<div class="collapse" id="all">
+    <div class="card card-body">
+        {% for goal in goals %}
+       <p>{{ goal.goaltitle }}</p> 
+        {% endfor %}
+      
+    </div>
+</div>
+<div class="collapse" id="public">
+    <div class="card card-body">
+      {% for goal in goals %}
+        {% if goal.is_public %}
+        <p>{{ goal.goaltitle }}</p>        
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<div class="collapse" id="private">
+    <div class="card card-body">
+        {% for goal in goals %}
+        
+        {% if goal.is_public  %}
+        {% else %}
+        <p>{{ goal.goaltitle }}</p>        
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+</div>
 {% endblock %}
