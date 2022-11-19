@@ -11,6 +11,7 @@ def register_user(request : HttpRequest):
 
         new_user = User.objects.create_user(username=request.POST["username"], email= request.POST["email"], first_name=request.POST["first_name"], last_name=request.POST["last_name"], password=request.POST["password"])
         new_user.save()
+        return redirect("accounts:login_user")
 
     return render(request, "accounts/register.html")
 
@@ -22,7 +23,7 @@ def login_user(request : HttpRequest):
 
         if user:
             login(request, user)
-            return redirect("Intent:profile")
+            return redirect("Intent:home")
         else:
             msg = "User Not Found , check your credentials"
 
@@ -33,6 +34,6 @@ def logout_user(request: HttpRequest):
 
     logout(request)
 
-    return redirect("Intent:home")
+    return redirect("Intent:front")
 
     

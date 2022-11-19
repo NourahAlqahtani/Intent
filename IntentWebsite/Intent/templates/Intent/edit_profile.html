@@ -1,0 +1,26 @@
+{% extends 'Intent/base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="box">
+        <div class="box-card">
+            <h1>Edit Profile</h1>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}about
+                <label  class="form-label">Profile Photo</label>
+                <input type="file" name="profile_img" accept="image/*" class="form-control" />
+                <label  class="form-label">Profile backgraund Photo</label>
+                <input type="file" name="back_img" accept="image/*" class="form-control" />
+                <label  class="form-label">About</label>
+                <textarea type="text" class="form-control" name="about"></textarea>
+                <input type="submit" class="btn btn-primary mt-2" value="Save" />
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}

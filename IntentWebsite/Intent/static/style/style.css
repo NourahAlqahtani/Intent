@@ -1,5 +1,5 @@
 body {
-    background-image: url(./../img/bg.jpg);
+    background-image: url(./../img/bg2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -16,14 +16,14 @@ body:after {
     position: fixed;
     opacity: .8;
     z-index: -1;
-    background: #f12711;
-    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
-    background: linear-gradient(to right, #f5af19, #f12711);
+    background: #7c0591;
+    background: -webkit-linear-gradient(to right, #cd76d7, #7c0591);
+    background: linear-gradient(to right, #cd76d7, #7c0591);
 }
 
 .boxed-page {
     text-align: center;
-    background-color: antiquewhite;
+    background-color: rgb(109, 22, 119);
     height: 100%;
     width: 100%;
     margin: 0 auto;

@@ -1,0 +1,45 @@
+{% extends 'Intent/base.html' %}
+{% block title %} View goal {% endblock %}
+{%block content %}
+<div class="container">
+<div class="box">
+    <div class="box-card">
+        <div class="goal">
+            {{ goal.goaltitle }}
+
+            <h2>Tasks</h2>
+            <br />
+
+            {% for task in tasks %}
+            <div class="border rounded p-3 mt-3">
+                <h5>{{ task.task }}</h5>
+                <p>{{ task.is_done }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="tasks">
+            <h2>Comments</h2>
+
+            {% for comment in comments %}
+            <div class="border rounded p-3 mt-3">
+                <h5>{{ comment.user.first_name }}</h5>
+                <p>{{ comment.content }}</p>
+                <span>{{ comment.created_at }}</span>
+            </div>
+            {% endfor %}
+
+            <hr />
+            <form action="{% url 'Intent:add_comment' goal.id %}" method="POST">
+                {% csrf_token %}
+                <label class="form-label">{{ request.user.first_name }}</label>
+
+                <label class="form-label">Your Comment:</label>
+                <textarea name="content" class="form-control"></textarea>
+
+                <input type="submit" class="btn btn-primary mt-2" value="New Comment" />
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

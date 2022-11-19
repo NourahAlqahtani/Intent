@@ -1,34 +1,34 @@
-{% extends 'Intent/base.html' %}
-{% block title %} add task {% endblock %}
-
-
+{% extends 'Intent/base.html' %} 
+{% block title %} add task {% endblock %} 
 {% block content %}
+<div class="container">
+<div class="box">
+  <div class="box-card">
 
 {{ goal.goaltitle }}
 
 <h2>Tasks</h2>
-<br>
+<br />
 
-    {% for task in tasks %}
-        <div class="border rounded p-3 mt-3">
-            <h5>{{ task.task }}</h5>
-            <p>{{ task.is_done }}</p>
-        </div>
-    {% endfor %}
-
+{% for task in tasks %}
+<div class="border rounded p-3 mt-3">
+  <h5>{{ task.task }}</h5>
+  <p>{{ task.is_done }}</p>
+</div>
+{% endfor %}
 
 <form action="{% url 'Intent:add_task' goal.id %}" method="POST">
-    {% csrf_token %}
-<div>
-    <h3>Task add</h3>
-
-<label>Task</label>
-<input type="text" placeholder="Task" name ="task">
-
-<button name="addtask" value="addtask">Creat</button>
+  {% csrf_token %}
+    <h3>Add Task</h3>
+    <label>Your task:</label>
+    <input type="text" placeholder="Task" name="task" />
+    <button class="w-30 btn btn-secondary btn-sm" name="addtask" value="addtask">Creat</button>
+    
+</form>
+<br>
+<a href="{% url 'Intent:profile' %}"><button class="w-100 btn btn-lg btn-dark">Done</button></a>
+</div>
 
 </div>
-</form>
-<a href="{% url 'Intent:profile' %}"><button>Done</button></a>
-
+</div>
 {% endblock %}

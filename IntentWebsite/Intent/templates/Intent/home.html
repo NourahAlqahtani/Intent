@@ -1,21 +1,23 @@
 {% extends 'Intent/base.html' %}
 {% block title %} Home {% endblock %}
-
-
 {% block content %}
+<!-- <strong class="text-dark nav-link">Welcome {{ request.user.first_name }}</strong>
+<div class="container py-5"> -->
+  <div class="container">
 
+    {% for goal in goals %}
+    {% if goal.is_public  %}
+    <div class="card">
+      <h5 class="card-header">{{ goal.goaltitle }}</h5>
+      <div class="card-body">
+        <p class="card-text">{{ goal.description }}</p>
+        <a href="{% url 'Intent:viewgoal' goal.id %}" class="btn btn-primary">view</a>
+      </div>
+    </div>
+    <br />
+    {% endif %}
+    {% endfor %}
+  </div>
 
-
-
-
-<div class="boxed-page">
-<ul>
-    <a href="{% url 'Intent:signin' %}"><li>signin</li></a>
-    <a href="{% url 'Intent:register' %}"><li>register</li></a>
-</ul>
-<div class="contener">
-    <h1>list</h1>
-    <p>{{ random_goal.goaltitle }}</p>
-</div>
 </div>
 {% endblock %}
